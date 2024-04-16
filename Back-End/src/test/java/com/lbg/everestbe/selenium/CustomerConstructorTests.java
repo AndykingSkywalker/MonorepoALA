@@ -17,7 +17,7 @@ public class CustomerConstructorTests {
 		String email = "JayDough@domain.com";
 		String phone = "0123456789";
 		String username = "JD@2024";
-		String password = "j0nHdO£";
+		String password = "${TEST_PASSWORD2}";
 
 		Customer customer = new Customer(id, name, address, email, phone, username, password);
 
