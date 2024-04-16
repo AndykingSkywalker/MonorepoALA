@@ -68,7 +68,7 @@ public class CustomerTest {
 		username.sendKeys("JHarry2024");
 
 		WebElement password = this.driver.findElement(By.cssSelector("#password"));
-		password.sendKeys("JHarry2024");
+		password.sendKeys("${TEST_PASSWORD}");
 
 		WebElement clickSubmit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"al\"]")));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", clickSubmit);
