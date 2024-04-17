@@ -44,5 +44,12 @@ pipeline {
         //     }
         // }
     }
+    post {
+        always {
+            archiveArtifacts
+            artifacts: '*.tgz, *.jar',
+                allowEmptyArchive: true
+        }
+    }
 }
 
