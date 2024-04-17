@@ -7,9 +7,9 @@ pipeline {
                     git credentialsId: 'githubLogin',
                     url: 'https://github.com/AndykingSkywalker/MonorepoALA.git'
 
-                    bat "npm install"
+                    sh "npm install"
 
-                    bat "npm pack"
+                    sh "npm pack"
                 }
             }
         }
@@ -20,7 +20,7 @@ pipeline {
                     url: 'https://github.com/AndykingSkywalker/MonorepoALA.git'
 
                     withMaven(maven: 'M3') {
-                        bat "mvn clean package"
+                        sh "mvn clean package"
                     }
                 }
             }
@@ -28,13 +28,13 @@ pipeline {
         stage('Selenium Test') {
             steps {
                 dir('Front-End') {
-                    bat 'npm run build'
-                    bat 'xcopy /y /i build c:\\Everestbe'
+                    sh 'npm run build'
+                    sh 'xcopy /y /i build c:\\Everestbe'
                 }
                 withMaven(maven: 'M3') {
-                    bat 'mvn clean install'
+                    sh 'mvn clean install'
                 }
-                bat 'java -cp target/Everestbe 0.0.1-SNAPSHOT.jar com.lbg.everestbe.selenium'
+                sh 'java -cp target/Everestbe 0.0.1-SNAPSHOT.jar com.lbg.everestbe.selenium'
             }
         }
     }
