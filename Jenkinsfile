@@ -15,7 +15,7 @@ pipeline {
         stage('Build Maven'){
             steps {
                 dir('Back-End') {
-                    git url 'https://github.com/AndykingSkywalker/MonorepoALA'
+                    git url: 'https://github.com/AndykingSkywalker/MonorepoALA'
 
                     withMaven(maven: 'M3') {
                         bat "mvn clean package"
