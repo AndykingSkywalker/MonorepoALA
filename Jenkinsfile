@@ -5,7 +5,8 @@ pipeline {
             steps {
                 dir('Front-End') {
                     git credentialsId: 'githubLogin',
-                    url: 'https://github.com/AndykingSkywalker/MonorepoALA.git'
+                    url: 'https://github.com/AndykingSkywalker/MonorepoALA.git',
+                        branch: 'main'
 
                     sh "npm install"
 
@@ -17,7 +18,8 @@ pipeline {
             steps {
                 dir('Back-End') {
                     git credentialsId: 'githubLogin',
-                    url: 'https://github.com/AndykingSkywalker/MonorepoALA.git'
+                    url: 'https://github.com/AndykingSkywalker/MonorepoALA.git',
+                        branch: 'main'
 
                     withMaven(maven: 'M3') {
                         sh "mvn clean package"
