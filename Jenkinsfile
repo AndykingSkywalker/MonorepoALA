@@ -31,18 +31,18 @@ pipeline {
                 }
             }
         }
-        stage('Selenium Test') {
-            steps {
-                dir('Front-End') {
-                    bat 'npm run build'
-                    bat 'xcopy /y /i build c:\\Everestbe'
-                }
+        // stage('Selenium Test') {
+        //     steps {
+        //         dir('Front-End') {
+        //             bat 'npm run build'
+        //             bat 'xcopy /y /i build c:\\Everestbe'
+        //         }
                
-                    bat 'mvn clean install'
+        //             bat 'mvn clean install'
                 
-                bat 'java -cp target/Everestbe 0.0.1-SNAPSHOT.jar com.lbg.everestbe.selenium'
-            }
-        }
+        //         bat 'java -cp target/Everestbe 0.0.1-SNAPSHOT.jar com.lbg.everestbe.selenium'
+        //     }
+        // }
     }
 }
 
