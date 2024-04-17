@@ -47,7 +47,7 @@ pipeline {
     post {
         always {
             archiveArtifacts
-            artifacts: "*.tgz",
+            artifacts: *.tgz,
                 allowEmptyArchive: true
         }
     }
