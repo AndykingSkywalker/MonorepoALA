@@ -4,7 +4,8 @@ pipeline {
         stage('Build React') {
             steps {
                 dir('Front-End') {
-                    git url: 'https://github.com/AndykingSkywalker/MonorepoALA'
+                    git credentialsID: 'gitHubLogin',
+                    url: 'https://github.com/AndykingSkywalker/MonorepoALA.git'
 
                     bat "npm install"
 
@@ -15,7 +16,8 @@ pipeline {
         stage('Build Maven'){
             steps {
                 dir('Back-End') {
-                    git url: 'https://github.com/AndykingSkywalker/MonorepoALA'
+                    git credentialsID: 'gitHubLogin',
+                    url: 'https://github.com/AndykingSkywalker/MonorepoALA.git'
 
                     withMaven(maven: 'M3') {
                         bat "mvn clean package"
