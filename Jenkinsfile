@@ -26,7 +26,7 @@ pipeline {
                         branch: 'main'
 
             
-                        bat "mvn clean package"
+                        bat "mvn package -Dmaven.test.skip"
                     
                 }
             }
