@@ -46,7 +46,7 @@ pipeline {
     }
     post {
         always {
-            archiveArtifacts artifacts: '*.tgz'
+            archiveArtifacts artifacts: 'Front-End/*.tgz'
         }
     }
 }
