@@ -21,9 +21,9 @@ pipeline {
                     url: 'https://github.com/AndykingSkywalker/MonorepoALA.git',
                         branch: 'main'
 
-                    withMaven(maven: 'M3') {
+            
                         bat "mvn clean package"
-                    }
+                    
                 }
             }
         }
@@ -33,9 +33,9 @@ pipeline {
                     bat 'npm run build'
                     bat 'xcopy /y /i build c:\\Everestbe'
                 }
-                withMaven(maven: 'M3') {
+               
                     bat 'mvn clean install'
-                }
+                
                 bat 'java -cp target/Everestbe 0.0.1-SNAPSHOT.jar com.lbg.everestbe.selenium'
             }
         }
