@@ -1,5 +1,5 @@
 pipeline {
-  // Configure Pipeline as Code (Pipeline SCM) trigger in Jenkins UI for automatic builds on push
+ agent any
 
   environment {
     MAVEN_HOME = '/path/to/maven'  // Assuming Maven is installed outside Jenkins
