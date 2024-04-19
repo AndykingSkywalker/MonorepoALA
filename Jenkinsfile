@@ -19,7 +19,7 @@ pipeline {
     // Stage 2: Build Docker Image (Front-End)
     stage('Build Docker Image (Front-End)') {
       steps {
-        bat 'docker build -t front-end-image ./.Front-End' // Build image for Front-End
+        bat 'docker build -t front-end-image ./Front-End' // Build image for Front-End
       }
     }
 
