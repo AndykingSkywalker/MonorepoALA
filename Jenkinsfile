@@ -31,11 +31,16 @@ pipeline {
             url: 'https://github.com/AndykingSkywalker/MonorepoALA.git',
             branch: 'main'
 
-          bat "mvn package -Dmaven.test.skip"
+          // bat "mvn package -Dmaven.test.skip"
         }
       }
     }
 
+    stage('Build Docker Image (Back-End)') {
+      steps {
+        bat 'docker build -t back-end-image ./Back-End' // Build image for Front-End
+      }
+    }
     // Stage 4 (Optional): Run Unit Tests (Front-End)
     // Uncomment and adjust if needed
     /*
