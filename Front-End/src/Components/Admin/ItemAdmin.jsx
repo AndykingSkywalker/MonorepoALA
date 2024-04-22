@@ -83,25 +83,6 @@ function ItemAdmin(props) {
   };
 
   // Render the Item admin component
-
-  function getFeedback() {
-    axios.get("http://localhost:8082/report/getAll")
-      .then((response) => { setFeedback(response.data) })
-      .catch(console.log)
-  }
-  useEffect(() => { getFeedback() }, []);
-  const [feedback, setFeedback] = useState([]);
-
-  for (const f of feedback) {
-    console.log(`Feedback: ${f}`);
-    feedback.push(<FeedbackProps
-    id={f.id}
-    email={f.email}
-    issue={f.issue}
-    
-    /> ) 
-    
-  };
   return (
     <div>
       <main>
@@ -177,7 +158,7 @@ function ItemAdmin(props) {
 
           <div>
 
-            <Feedback feedback={feedback}/>
+            <Feedback/>
           </div>
       </main>
     </div>
