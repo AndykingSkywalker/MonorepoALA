@@ -21,10 +21,10 @@ function ContactForm() {
       setModalMessage('Thank you for your feedback!');
       setShowModal(true);
       return;
-      
+
     } catch (error) {
       console.error('Error reporting issue:', error);
-    
+
     }
   };
   // Handle to close modal
@@ -34,12 +34,9 @@ function ContactForm() {
 
   // Navigate to contact page after successful submission
   const handleNavigate = () => {
-    if (modalMessage.includes("Issue")) {
-      navigate("/contactus");
-      setShowModal(false);
-      setEmail("");
-      setIssue("");
-    }};
+    setShowModal(false);
+    navigate("/contactus");
+  };
 
   return (
     <div className="container mt-4">
@@ -48,10 +45,10 @@ function ContactForm() {
       <form onSubmit={handleSubmit}>
         {/* Email & description input */}
         <div className="mb-3">
-            <br />
-            <br />
-          <label aria-label="email field" className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{fontSize:"25px", color: "white", fontFamily: "Verdana, sans-serif", width: "100px", backgroundColor: "#365074" }}>Email:</label>
-          <input 
+          <br />
+          <br />
+          <label aria-label="email field" className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ fontSize: "25px", color: "white", fontFamily: "Verdana, sans-serif", width: "100px", backgroundColor: "#365074" }}>Email:</label>
+          <input
             type="email"
             className="form-control"
             id="email"
@@ -62,21 +59,21 @@ function ContactForm() {
           />
         </div>
         <div className="mb-3">
-          <label aria-label="description field" className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{fontSize:"25px", color: "white", fontFamily: "Verdana, sans-serif", width: "270px", backgroundColor: "#365074" }} htmlFor="issue" >Description:</label>
+          <label aria-label="description field" className="border border-dark p-2 mb-2 border-4 border-dark rounded" style={{ fontSize: "25px", color: "white", fontFamily: "Verdana, sans-serif", width: "270px", backgroundColor: "#365074" }} htmlFor="issue" >Description:</label>
           <textarea
             className="form-control"
             id="issue"
             value={issue}
             onChange={(e) => setIssue(e.target.value)}
-            rows={6} 
+            rows={6}
             required
             style={{ fontSize: "25px" }}
           />
         </div>
         <div>
-        <button aria-label="submit button" type="submit" className="btn btn-light btn-lg" >Submit</button>
+          <button aria-label="submit button" type="submit" className="btn btn-light btn-lg" >Submit</button>
         </div>
-        
+
       </form>
       {/* Modal message component */}
       {showModal && (
