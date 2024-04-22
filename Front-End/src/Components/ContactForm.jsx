@@ -20,6 +20,9 @@ function ContactForm() {
       // Set modal message and display modal
       setModalMessage('Thank you for your feedback!');
       setShowModal(true);
+      setEmail('');
+      setIssue('');
+
       return;
 
     } catch (error) {
