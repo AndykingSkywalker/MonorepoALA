@@ -28,4 +28,9 @@ public class ReportService {
 		return new ResponseEntity<Report>(created, HttpStatus.CREATED);
 
 	}
+
+	public boolean resolveReport(int id) {
+		this.repo.deleteById(id);
+		return !this.repo.existsById(id);
+	}
 }
