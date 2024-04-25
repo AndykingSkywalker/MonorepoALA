@@ -23,6 +23,19 @@ pipeline {
       }
     }
 
+
+       stage('Run Selenium Test'){
+      steps {
+        dir('Back-End') {
+          git credentialsId: 'githubLogin',
+            url: 'https://github.com/AndykingSkywalker/MonorepoALA.git',
+            branch: 'main'
+
+          bat 'mvn test'
+        }
+      }
+    }
+
     // Stage 3: Build Maven (Back-End) - No Changes
     stage('Build Maven'){
       steps {
@@ -42,31 +55,6 @@ pipeline {
         bat 'docker build -t back-end-image ./Back-End' // Build image for Front-End
       }
     }
-
-
-    // Stage 4 (Optional): Run Unit Tests (Front-End)
-    // Uncomment and adjust if needed
-    /*
-    stage('Run Front-End Tests') {
-      steps {
-        sh 'docker run front-end-image npm test' // Run tests within the container
-      }
-    }
-    */
-
-    // Stage 5 (Optional): Run Selenium Tests (if applicable)
-    // Uncomment and adjust if needed
-    /*
-    stage('Selenium Test') {
-      steps {
-        // ... (existing steps to copy build artifacts to Everestbe directory)
-
-        bat 'mvn clean install'
-
-        bat 'java -cp target/Everestbe 0.0.1-SNAPSHOT.jar com.lbg.everestbe.selenium'
-      }
-    }
-    */
   }
 
   post {
