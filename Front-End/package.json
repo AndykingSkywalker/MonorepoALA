@@ -44,5 +44,10 @@
   },
   "devDependencies": {
     "react-axe": "^3.5.4"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!axios)/"
+    ]
   }
 }

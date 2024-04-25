@@ -19,7 +19,7 @@ function App() {
   return (
     
     <Router>
-      <Navbar className="navbar align-content-center " style={{ display: "flex", backgroundColor: "rgba(0, 0, 0, 0)" }} />
+            <Navbar className="navbar align-content-center " style={{ display: "flex", backgroundColor: "rgba(0, 0, 0, 0)" }} />
       <Routes>
         <Route path='/'element={<Home />} />
         <Route path='/items' element={<Items />} />
@@ -33,10 +33,6 @@ function App() {
         <Route path='/contactus' element={<ContactForm/>}/>
       </Routes>
     </Router>
-
-
-
-
   );
 }
 
