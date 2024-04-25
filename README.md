@@ -18,6 +18,7 @@
 ---
 # Latest Update Notes
 
+- Additional comments added for further clarification 
 - Added Bug Report Feature
 - Added CI/CD pipeline
 - Bug fixes
