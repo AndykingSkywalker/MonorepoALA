@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import ContactForm from "./ContactForm";
+import ContactForm from "../Components/ContactForm";
 
 jest.mock("axios");
 
