@@ -17,11 +17,15 @@ function ItemCard(props) {
 
   // Function to get image URL based on product name
   function getImageUrl(productName) {
+    if (typeof productName !== 'string') {
+      return null; // or return a default image URL
+    }
+  
     const productNameLower = productName.toLowerCase();
     if (productNameLower in productImages) {
       return productImages[productNameLower];
     } else {
-      return "/default.png";
+      return null; // or return a default image URL
     }
   }
   // Function to add item to cart
